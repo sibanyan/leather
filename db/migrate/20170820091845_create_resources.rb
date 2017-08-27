@@ -4,6 +4,7 @@ class CreateResources < ActiveRecord::Migration[5.1]
       t.string :type, null: false, comment: "text,image,movieなどを識別する"
       t.string :url, null: false
       t.integer :order, null: false
+      t.string :note
       t.references :article, null: false, foreign_key: true
       t.timestamps
     end

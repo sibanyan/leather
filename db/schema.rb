@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(version: 20170820091845) do
     t.string "type", null: false, comment: "text,image,movieなどを識別する"
     t.string "url", null: false
     t.integer "order", null: false
+    t.string "note"
     t.bigint "article_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
