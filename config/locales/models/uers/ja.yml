@@ -1,0 +1,12 @@
+ja:
+  activerecord:
+    models:
+      user: ユーザ
+    attributes:
+      user:
+        id: ID
+        name: ユーザ名
+        login_id: ログインID
+        password_digest: パスワード
+        created_at: レコード作成日時
+        updated_at: レコード更新日時

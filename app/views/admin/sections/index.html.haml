@@ -1,0 +1,21 @@
+
+
+
+.row
+  %table.table.table-striped.table-condensed
+    %thead
+      %tr
+        %th= t('activerecord.models.section')
+        %th
+    %tbody
+      - if @sections.empty?
+        %tr
+          %td{ colspan: 2 }= t('.messages.no_search_results', model: t('activerecord.models.user'))
+      - else
+        - @sections.each do |section|
+          %tr
+            %td= section.title
+            %td.text-right
+              -# %a.btn.btn-primary{ href: edit_user_path(user.id) }= t('.buttons.edit')
+              -# = link_to user_path(user), method: :delete, data: { confirm: '削除するけどいいかい？' }, class: 'btn btn-danger' do
+                = t('.buttons.delete')

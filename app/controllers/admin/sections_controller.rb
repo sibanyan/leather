@@ -1,6 +1,7 @@
 class Admin::SectionsController < ApplicationController
 
   def index
+    @sections = Section.all
   end
 
   def create

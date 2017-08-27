@@ -1,0 +1,11 @@
+ja:
+  activerecord:
+    models:
+      section: セクション
+    attributes:
+      section:
+        id: ID
+        title: 章タイトル
+        explanation: 詳細情報
+        created_at: レコード作成日時
+        updated_at: レコード更新日時
