@@ -1,0 +1,19 @@
+= form_for [:admin, @section] do |f|
+  .row.panel.panel-default
+    .panel-body
+      .panel.panel-default
+        .panel-heading= t('.header_titles.section_info')
+        .panel-body
+          - # 章タイトル
+          .row.form-group.section_title{ class: @section.errors.key?(:title) ? 'has-error' : '' }
+            %label.col-sm-2.control-label{ for: 'section_title' }
+              = t('activerecord.attributes.section.title')
+            .col-sm-9
+              = text_field_tag 'section[title]', @section.title, class: 'form-control', placeholder: t('activerecord.attributes.section.title')
+              - @section.errors.full_messages_for(:title).each do |message|
+                %span.help-block= message
+
+    .panel-footer.text-center
+      %button.btn.btn-primary
+        %i.fa.fa-floppy-o{ 'aria-hidden' => true }
+          = t('.buttons.save')
