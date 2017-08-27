@@ -10,4 +10,14 @@
     %link{ href: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css', rel: 'stylesheet' }
 
   %body
-    = yield
+    #app-header.navbar.navbar-default.navbar-static-top
+      = link_to t('app_name'), admin_sections_path, class: 'navbar-brand'
+
+    .container-fluid
+      .row
+        #app-sidebar.col-sm-2.sidebar
+          %ul.nav.nav-sidebar
+            %li{ class: params[:controller] == 'sections' ? 'active' : '' }= link_to t('users.title'), '#', style: 'padding-left: 12px; padding-right: 12px;'
+        .main.col-sm-10.col-sm-offset-2
+          #app-content.container
+            = yield

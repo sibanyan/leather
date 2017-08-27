@@ -1,6 +1,10 @@
 
 
-
+.row.function-button
+  .text-right
+    = link_to new_admin_section_path, class: 'btn btn-default' do
+      %i.fa.fa-plus{ 'aria-hidden' => true }
+        = t('.buttons.new')
 .row
   %table.table.table-striped.table-condensed
     %thead
