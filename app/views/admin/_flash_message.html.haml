@@ -1,0 +1,11 @@
+.row
+  - unless flash.nil?
+    - unless flash[:notice].nil?
+      .alert.alert-success
+        - flash.each do |type, msg|
+          = msg
+    - unless flash[:alert].nil?
+      .alert.alert-danger
+        %ul
+        - flash.each do |type, msg|
+          %li{ style: 'list-style: none;' }= msg

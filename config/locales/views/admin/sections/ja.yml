@@ -1,0 +1,7 @@
+ja:
+  admin:
+    sections:
+      title: あ
+      create:
+        notices:
+          success: 記事を登録しました

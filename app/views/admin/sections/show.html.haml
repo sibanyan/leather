@@ -1,0 +1,41 @@
+= render partial: '/admin/flash_message'
+
+.row.panel.panel-default
+  .panel-body
+    .panel.panel-default
+      .panel-body
+        - # 章タイトル
+        .row.form-group.section_title
+          %label.col-sm-2.control-label{ for: 'section_title' }
+            = t('activerecord.attributes.section.title')
+          .col-sm-9
+            .value= @section.title
+        - # 詳細テキスト
+        .row.form-group.section_explanation
+          %label.col-sm-2.control-label{ for: 'section_explanation' }
+            = t('activerecord.attributes.section.explanation')
+          .col-sm-9
+            %pre= @section.explanation
+
+    .row.function-button
+      .text-right
+        = link_to new_admin_section_article_path(@section), class: 'btn btn-default' do
+          %i.fa.fa-plus{ 'aria-hidden' => true }
+            = t('.buttons.new')
+
+    %table.table.table-striped.table-condensed
+      %thead
+        %tr
+          %th= t('activerecord.attributes.article.title')
+      %tbody
+        - if @section.articles.empty?
+          %tr
+            %td{ colspan: 2 }= t('.messages.no_search_results', model: t('activerecord.models.article'))
+        - else
+          - @section.articles.each do |article|
+            %tr
+              %td= article.title
+              %td.text-right
+                = link_to admin_section_article_path(@section, article), class: 'btn btn-primary' do
+                  %i.fa.fa-eye{ 'aria-hidden' => true }
+                    = t('.buttons.show')

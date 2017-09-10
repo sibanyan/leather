@@ -1,0 +1,21 @@
+ja:
+  admin:
+    articles:
+      title: あ
+      index:
+        title: い
+      show:
+        title: う
+      new:
+        title: え
+      create:
+        notices:
+          success: 記事を登録しました
+      update:
+        notices:
+          success: 記事を更新しました
+      edit:
+        title: お
+      destoy:
+        notices:
+          success: 記事を削除しました

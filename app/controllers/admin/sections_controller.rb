@@ -25,6 +25,7 @@ class Admin::SectionsController < ApplicationController
   end
 
   def show
+    @section = Section.find(params[:id])
   end
 
   def update
@@ -33,8 +34,9 @@ class Admin::SectionsController < ApplicationController
   def destroy
   end
 
+private
   def create_params
     # section"=>{"title"
-    params.require(:section).permit(:title)
+    params.require(:section).permit(:title, :explanation)
   end
 end

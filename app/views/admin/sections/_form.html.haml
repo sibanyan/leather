@@ -12,6 +12,14 @@
               = text_field_tag 'section[title]', @section.title, class: 'form-control', placeholder: t('activerecord.attributes.section.title')
               - @section.errors.full_messages_for(:title).each do |message|
                 %span.help-block= message
+          - # 詳細テキスト
+          .row.form-group.section_explanation{ class: @section.errors.key?(:explanation) ? 'has-error' : '' }
+            %label.col-sm-2.control-label{ for: 'section_explanation' }
+              = t('activerecord.attributes.section.explanation')
+            .col-sm-9
+              = text_area_tag 'section[explanation]', @section.explanation, class: 'form-control', placeholder: t('activerecord.attributes.section.explanation')
+              - @section.errors.full_messages_for(:explanation).each do |message|
+                %span.help-block= message
 
     .panel-footer.text-center
       %button.btn.btn-primary
