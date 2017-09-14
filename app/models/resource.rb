@@ -23,4 +23,6 @@
 
 class Resource < ApplicationRecord
   belongs_to :article
+
+  enum type: {text: "Text", image: "Image", movie: "Movie"}
 end

@@ -1,0 +1,26 @@
+.row.panel.panel-default
+  .panel-body
+    .panel.panel-default
+      .panel-heading= t('.header_titles.article_info')
+      .panel-body
+        - #
+        .row.form-group.article_title
+          %label.col-sm-2.control-label
+            = t('activerecord.attributes.article.title')
+          .col-sm-9.value
+            = @article.title
+
+    .panel.panel-default
+      .panel-heading= t('.header_titles.resources_info')
+      .panel-body
+        - @article.resources.each do |resource|
+          .row.form-group.resource_type
+            .col-sm-1.value
+              = resource_type_icon(resource.type)
+            .col-sm-11.value
+              = resource.url
+
+  .panel-footer.text-center
+    %button.btn.btn-primary
+      %i.fa.fa-floppy-o{ 'aria-hidden' => true }
+        = link_to t('.buttons.edit'), edit_admin_section_article_path(@article.section, @article)

@@ -5,7 +5,7 @@ class Admin::ArticlesController < ApplicationController
     @article = @section.articles.build(create_params)
     # raise
     if @article.save
-      redirect_to admin_section_path(@section), notice: I18n.t("admin.articles.create.notices.success") 
+      redirect_to admin_section_path(@section), notice: I18n.t("admin.articles.create.notices.success")
       #redirect_toはGETで行われる（POSTなどは無理）
     else
       pp @article.errors
@@ -20,9 +20,11 @@ class Admin::ArticlesController < ApplicationController
   end
 
   def edit
+    @article = Section.find(params[:section_id]).articles.find(params[:id])
   end
 
   def show
+    @article = Section.find(params[:section_id]).articles.find(params[:id])
   end
 
   def update
